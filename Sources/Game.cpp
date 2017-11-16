@@ -16,16 +16,24 @@ Vector2 cannonPos;      //!< 砲台の位置
 Vector2 bulletPos;      //!< 弾の位置
 Rect    targetRect;     //!< ターゲットの矩形
 int     score;          //!< スコア
+int     flag;
 
 
 // ゲーム開始時に呼ばれる関数です。
 void Start()
 {
     cloudPos = Vector2(-320, 100);
+<<<<<<< HEAD
     cannonPos = Vector2(-80, -150);
     targetRect = Rect(80, -140, 40, 40);
     bulletPos.x = 700;
     score = 000000;
+=======
+    cannonPos = Vector2(-310, -150);
+    targetRect = Rect(280, -140, 40, 40);
+    bulletPos.x = -999;
+    score = 0;
+>>>>>>> 695d404c0530aa1b6cd77c937f3ab31e67db8a2d
 }
 
 // 1/60秒ごとに呼ばれる関数です。モデルの更新と画面の描画を行います。
@@ -54,6 +62,13 @@ void Update()
 
     // 雲の描画
     DrawImage("cloud1.png", cloudPos);
+    if (cloudPos.x > -999) {
+        cloudPos.x += 200 * Time::deltaTime;
+    }
+    if (cloudPos.x > 360){
+        cloudPos = Vector2(-550, 100);
+
+    }
 
     // 弾の描画
     if (bulletPos.x < 700 ) {
@@ -63,6 +78,19 @@ void Update()
     // 砲台の描画
     FillRect(Rect(cannonPos.x-10, -140, 20, 100), Color::blue);
     DrawImage("cannon.png", cannonPos);
+    if (cannonPos.y == -140) {
+        flag = 0;
+    }
+    if (cannonPos.y == -70) {
+        flag = 1;
+    }
+    if (flag == 1){
+        cannonPos.y -= 1;
+    }
+    if (flag ==0){
+        cannonPos.y += 1;
+    }
+
 
     // ターゲットの描画
     FillRect(targetRect, Color::red);
