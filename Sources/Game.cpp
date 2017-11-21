@@ -22,18 +22,12 @@ int     flag;
 // ゲーム開始時に呼ばれる関数です。
 void Start()
 {
-    cloudPos = Vector2(-320, 100);
-<<<<<<< HEAD
-    cannonPos = Vector2(-80, -150);
-    targetRect = Rect(80, -140, 40, 40);
-    bulletPos.x = 700;
-    score = 000000;
-=======
+    cloudPos = Vector2(80, -150);
     cannonPos = Vector2(-310, -150);
     targetRect = Rect(280, -140, 40, 40);
-    bulletPos.x = -999;
-    score = 0;
->>>>>>> 695d404c0530aa1b6cd77c937f3ab31e67db8a2d
+    bulletPos.x = 700;
+    score = 000000;
+//>>>>>>> 695d404c0530aa1b6cd77c937f3ab31e67db8a2d
 }
 
 // 1/60秒ごとに呼ばれる関数です。モデルの更新と画面の描画を行います。
