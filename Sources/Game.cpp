@@ -22,7 +22,7 @@ int     flag;
 // ゲーム開始時に呼ばれる関数です。
 void Start()
 {
-    cloudPos = Vector2(80, 100);
+    cloudPos = Vector2(-320, 100);
     cannonPos = Vector2(-310, -150);
     targetRect = Rect(280, -140, 40, 40);
     bulletPos.x = 700;
