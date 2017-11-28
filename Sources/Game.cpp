@@ -25,15 +25,12 @@ void Start()
     cloudPos = Vector2(80, -150);
     cannonPos = Vector2(-310, -150);
     targetRect = Rect(280, -140, 40, 40);
-<<<<<<< HEAD
     bulletPos.x = 700;
     score = 000000;
 //>>>>>>> 695d404c0530aa1b6cd77c937f3ab31e67db8a2d
-=======
-    bulletPos.x = -999;
-    score = 0;
+    bulletPos.x = 700;
+    score = 000000;
     PlayBGM("bgm_maoudamashii_8bit07.mp3");
->>>>>>> 14b1b5bea7430abc33897985870110375a116b76
 }
 
 // 1/60秒ごとに呼ばれる関数です。モデルの更新と画面の描画を行います。
@@ -47,23 +44,17 @@ void Update()
 
     // 弾の移動
     if (bulletPos.x > -999) {
-<<<<<<< HEAD
         bulletPos.x += 300 * Time::deltaTime;
-=======
         bulletPos.x += 100 * Time::deltaTime;
->>>>>>> 14b1b5bea7430abc33897985870110375a116b76
 
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
         if (targetRect.Overlaps(bulletRect)) {
-<<<<<<< HEAD
             score += 100;         // スコアの加算
             bulletPos.x = 700; // 弾を発射可能な状態に戻す
-=======
             PlaySound("se_maoudamashii_explosion06.mp3");
-            score += 1;         // スコアの加算
-            bulletPos.x = -999; // 弾を発射可能な状態に戻す
->>>>>>> 14b1b5bea7430abc33897985870110375a116b76
+            score += 100;         // スコアの加算
+            bulletPos.x = 700; // 弾を発射可能な状態に戻す
         }
     }
 
