@@ -22,7 +22,7 @@ int     flag;
 // ゲーム開始時に呼ばれる関数です。
 void Start()
 {
-    cloudPos = Vector2(80, -150);
+    cloudPos = Vector2(80, 100);
     cannonPos = Vector2(-310, -150);
     targetRect = Rect(280, -140, 40, 40);
     bulletPos.x = 700;
@@ -53,8 +53,6 @@ void Update()
             score += 100;         // スコアの加算
             bulletPos.x = 700; // 弾を発射可能な状態に戻す
             PlaySound("se_maoudamashii_explosion06.mp3");
-            score += 100;         // スコアの加算
-            bulletPos.x = 700; // 弾を発射可能な状態に戻す
         }
     }
 
